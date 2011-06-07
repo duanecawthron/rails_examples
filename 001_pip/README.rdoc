@@ -9,8 +9,8 @@ I have not tried pip. brew search hg suggested this:
 
 Install Mercurial with pip:
 
-    easy_install pip && pip install Mercurial
+	easy_install pip && pip install Mercurial
 
 Or easy_install:
 
-    easy_install Mercurial
+	easy_install Mercurial

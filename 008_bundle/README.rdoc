@@ -36,11 +36,11 @@ Install using RubyGems with RVM. sudo is not required.
 
 Install using Bundler.
 
-    cat << EOF > Gemfile
+	cat << EOF > Gemfile
 	source 'http://rubygems.org'
 	gem 'sqlite3'
 	EOF
-    bundle install
+	bundle install
 
 == Test to see if Bundler is installed with rails.
 

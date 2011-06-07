@@ -37,4 +37,4 @@ Follow the instructions on the Wiki, "Installing to /usr/local for Developers".
 
 == Notes
 
-File are downloaded and cached to /Users/cawthron/Library/Caches/Homebrew
+Files are downloaded and cached to ~/Library/Caches/Homebrew

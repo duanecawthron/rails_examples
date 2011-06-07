@@ -15,8 +15,8 @@ Install with brew. See brew_install_mysql.log.
 
 Setup MySQL to run as your user account. See mysql_install_db.log.
 
-    unset TMPDIR
-    mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
+	unset TMPDIR
+	mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
 
 == Commands
 
@@ -28,9 +28,9 @@ Start and stop the server.
 Grant access to a database.
 
 	mysql -u root
-    GRANT ALL PRIVILEGES ON mydatabase.* TO myuser@localhost IDENTIFIED BY 'mypassword';
-    FLUSH PRIVILEGES;
-    QUIT;
+	GRANT ALL PRIVILEGES ON mydatabase.* TO myuser@localhost IDENTIFIED BY 'mypassword';
+	FLUSH PRIVILEGES;
+	QUIT;
 
 Create and delete a database.
 
@@ -40,6 +40,6 @@ Create and delete a database.
 Set mysql root password.
 
 	mysql -u root
-    UPDATE mysql.user SET Password=PASSWORD('rootpassword') WHERE User='root';
-    FLUSH PRIVILEGES;
-    QUIT;
+	UPDATE mysql.user SET Password=PASSWORD('rootpassword') WHERE User='root';
+	FLUSH PRIVILEGES;
+	QUIT;
