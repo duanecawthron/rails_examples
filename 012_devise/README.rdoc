@@ -1,0 +1,26 @@
+= Rails Authentication with Devise
+
+== Resources
+
+	http://ruby-toolbox.com/categories/rails_authentication.html
+	http://www.tonyamoyal.com/2010/07/28/rails-authentication-with-devise-and-cancan-customizing-devise-controllers/
+	
+== Introduction
+
+After some quick Google searches, I decided that Devise would be a good authentication system to try. I also discovered that ruby-toolbox.com is a good place to see what is most used. Devise is on the top of their list.
+
+This example is based on this nice tutorial from tonyamoyal.com. Note, this example implements only the most basic use of Devise. You must login to see home/index. CanCan is not implemented.
+
+== Execution
+
+Generate and run the example.
+
+	cd   012_devise
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+	bash 003_reset_database.sh
+	bash 004_rails_server.sh
+
+Delete the database, files and gemset.
+
+	bash 999_clean.sh

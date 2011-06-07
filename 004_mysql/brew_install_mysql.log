@@ -1,0 +1,100 @@
+$ brew install mysql
+
+Also installing dependencies: cmake, readline, pidof
+==> Downloading http://www.cmake.org/files/v2.8/cmake-2.8.4.tar.gz
+######################################################################## 100.0%
+==> Downloading patches
+######################################################################## 100.0%
+==> Patching
+patching file Modules/Platform/Darwin.cmake
+==> ./bootstrap --prefix=/usr/local/Cellar/cmake/2.8.4 --system-libs --no-system-libarchive --datadir=/share/cmake --docdir=/share/doc/cmake --mandir=
+==> make
+==> make install
+/usr/local/Cellar/cmake/2.8.4: 582 files, 28M, built in 5.1 minutes
+==> Downloading ftp://ftp.cwru.edu/pub/bash/readline-6.2.tar.gz
+######################################################################## 100.0%
+==> Downloading patches
+######################################################################## 100.0%
+==> Patching
+patching file vi_mode.c
+patching file callback.c
+==> ./configure --prefix=/usr/local/Cellar/readline/6.2.1 --mandir=/usr/local/Cellar/readline/6.2.1/share/man --infodir=/usr/local/Cellar/readline/6.2
+==> make install
+==> Caveats
+This formula is keg-only, so it was not symlinked into /usr/local.
+
+OS X provides the BSD libedit library, which shadows libreadline.
+In order to prevent conflicts when programs look for libreadline we are
+defaulting this GNU Readline installation to keg-only.
+
+
+Generally there are no consequences of this for you.
+If you build your own software and it requires this formula, you'll need
+to add its lib & include paths to your build variables:
+
+  LDFLAGS: -L/usr/local/Cellar/readline/6.2.1/lib
+  CPPFLAGS: -I/usr/local/Cellar/readline/6.2.1/include
+==> Summary
+/usr/local/Cellar/readline/6.2.1: 32 files, 2.1M, built in 24 seconds
+==> Downloading http://www.nightproductions.net/downloads/pidof_source.tar.gz
+######################################################################## 100.0%
+==> make all
+==> /usr/bin/gzip pidof.1
+/usr/local/Cellar/pidof/0.1.4: 2 files, 20K, built in 2 seconds
+==> Downloading http://downloads.mysql.com/archives/mysql-5.5/mysql-5.5.10.tar.gz
+######################################################################## 100.0%
+==> Downloading patches
+==> Patching
+patching file scripts/mysqld_safe.sh
+Hunk #1 succeeded at 555 (offset 172 lines).
+patching file scripts/mysql_config.sh
+Hunk #1 succeeded at 137 (offset 5 lines).
+==> cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/Cellar/mysql/5.5.10 -DMYSQL_DATADIR=/usr/local/var/mysql -DINSTALL_MANDIR=/usr/local/Cellar/mysql/5.5.10
+==> make
+==> make install
+==> Caveats
+Set up databases to run AS YOUR USER ACCOUNT with:
+    unset TMPDIR
+    mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
+
+To set up base tables in another folder, or use a differnet user to run
+mysqld, view the help for mysqld_install_db:
+    mysql_install_db --help
+
+and view the MySQL documentation:
+  * http://dev.mysql.com/doc/refman/5.5/en/mysql-install-db.html
+  * http://dev.mysql.com/doc/refman/5.5/en/default-privileges.html
+
+To run as, for instance, user "mysql", you may need to `sudo`:
+    sudo mysql_install_db ...options...
+
+Start mysqld manually with:
+    mysql.server start
+
+    Note: if this fails, you probably forgot to run the first two steps up above
+
+A "/etc/my.cnf" from another install may interfere with a Homebrew-built
+server starting up correctly.
+
+To connect:
+    mysql -uroot
+
+To launch on startup:
+* if this is your first install:
+    mkdir -p ~/Library/LaunchAgents
+    cp /usr/local/Cellar/mysql/5.5.10/com.mysql.mysqld.plist ~/Library/LaunchAgents/
+    launchctl load -w ~/Library/LaunchAgents/com.mysql.mysqld.plist
+
+* if this is an upgrade and you already have the com.mysql.mysqld.plist loaded:
+    launchctl unload -w ~/Library/LaunchAgents/com.mysql.mysqld.plist
+    cp /usr/local/Cellar/mysql/5.5.10/com.mysql.mysqld.plist ~/Library/LaunchAgents/
+    launchctl load -w ~/Library/LaunchAgents/com.mysql.mysqld.plist
+
+You may also need to edit the plist to use the correct "UserName".
+
+Warning: m4 macros were installed to "share/aclocal".
+Homebrew does not append "/usr/local/share/aclocal"
+to "/usr/share/aclocal/dirlist". If an autoconf script you use
+requires these m4 macros, you'll need to add this path manually.
+==> Summary
+/usr/local/Cellar/mysql/5.5.10: 6232 files, 219M, built in 4.7 minutes

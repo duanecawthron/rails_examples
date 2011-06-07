@@ -1,0 +1,30 @@
+= Install RubyGems, a package management framework for Ruby
+
+Resources
+
+	http://rubygems.org/
+	http://rubygems.org/pages/download
+
+== Introduction
+
+There is no need to install RubyGems if you use Ruby Version Manager (RVM).
+
+Install RubyGems if you can't use RVM or if you don't want to use RVM.
+
+== Installation on Mac OS X Snow Leopard v10.6.7
+
+Follow the instructions on the download page.
+
+	download rubygems-1.8.3.zip
+	expand the zip
+	ruby setup.rb 
+
+You will probably need to use sudo to run setup.rb.
+
+	sudo ruby setup.rb
+
+== Commands
+
+Install the rails gem.
+
+	sudo gem install rails

@@ -1,0 +1,96 @@
+= Install Bundler to manage a Ruby application dependencies
+
+Resources
+
+	http://gembundler.com/
+
+== Introduction
+
+Instead of using "gem install" to install individual gems, you can use bundler to install a set of gems and their dependencies.
+
+Create a file named Gemfile with the list of gems to install. Then run "bundle install".
+
+== Installation
+
+	gem install bundler
+	
+Or
+	gem install rails
+
+== Commands
+
+	bundle install
+	bundle update 
+
+== RubyGems, Bundler and RVM
+
+Depending on your configuration, here are three different ways to install a gem.
+
+Install using RubyGems without RVM. sudo is required.
+
+	sudo gem install sqlite3
+
+Install using RubyGems with RVM. sudo is not required.
+
+	gem install sqlite3
+
+Install using Bundler.
+
+    cat << EOF > Gemfile
+	source 'http://rubygems.org'
+	gem 'sqlite3'
+	EOF
+    bundle install
+
+== Test to see if Bundler is installed with rails.
+
+Install bundler.
+
+	rvm gemset create test
+	rvm gemset use test
+	gem list
+		*** LOCAL GEMS ***
+		rake (0.8.7)
+	gem install bundler
+	gem list
+		*** LOCAL GEMS ***
+		bundler (1.0.14)
+		rake (0.8.7)
+
+Or, install rails and get bundler too.
+
+	rvm gemset create test2
+	rvm gemset use test2
+	gem list
+		*** LOCAL GEMS ***
+		rake (0.8.7)
+	gem install rails
+	gem list
+		*** LOCAL GEMS ***
+		abstract (1.0.0)
+		actionmailer (3.0.7)
+		actionpack (3.0.7)
+		activemodel (3.0.7)
+		activerecord (3.0.7)
+		activeresource (3.0.7)
+		activesupport (3.0.7)
+		arel (2.0.10)
+		builder (2.1.2)
+		bundler (1.0.14)
+		erubis (2.6.6)
+		i18n (0.5.0)
+		mail (2.2.19)
+		mime-types (1.16)
+		polyglot (0.3.1)
+		rack (1.2.3)
+		rack-mount (0.6.14)
+		rack-test (0.5.7)
+		rails (3.0.7)
+		railties (3.0.7)
+		rake (0.8.7)
+		thor (0.14.6)
+		treetop (1.4.9)
+		tzinfo (0.3.27)
+
+	rvm --force gemset delete test
+	rvm --force gemset delete test2

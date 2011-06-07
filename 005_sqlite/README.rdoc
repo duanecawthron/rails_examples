@@ -1,0 +1,15 @@
+= Install SQLite open source database
+
+Resources
+
+	http://www.sqlite.org/
+
+== Installation on Mac OS X Snow Leopard v10.6.7
+
+Install with brew. See brew_install_sqlite.log.
+
+	brew install sqlite
+
+== Configuration
+
+No configuration is needed.

@@ -1,0 +1,58 @@
+= Install Git, the distributed source control tool
+
+Resources
+
+	http://git-scm.com/
+	http://help.github.com/mac-set-up-git/
+	http://help.github.com/create-a-repo/
+
+== Installation on Mac OS X Snow Leopard v10.6.7
+
+Install with brew. See brew_install_git.log.
+
+	brew install git
+
+== GitHub Configuration
+
+Follow the instructions on http://help.github.com/mac-set-up-git/
+
+Generate a new ssh key if needed.
+
+	ssh-keygen -t rsa -C "your_email@youremail.com"
+
+Add your SSH key (~/.ssh/id_rsa.pub) to GitHub. On the GitHub site Click “Account Settings” > Click “SSH Public Keys” > Click “Add another public key”. 
+
+Get your API Token from GitHub. On the GitHub site Click “Account Settings” > Click “Account Admin.”
+
+Test your ssh connection. Set your username and email. Set your GitHub username and token.
+
+	ssh git@github.com
+	git config --global user.name "Firstname Lastname"
+	git config --global user.email "your_email@youremail.com"
+	git config --global github.user username
+	git config --global github.token 0123456789yourf0123456789token
+
+== Commands
+
+Create a new repository called Hello World.
+
+	https://github.com/repositories/new
+
+	mkdir ~/Hello-World
+	cd ~/Hello-World
+	git init
+	git remote add origin git@github.com:username/Hello-World.git
+
+Or clone a repository.
+
+	git clone git@github.com:username/Hello-World.git
+
+Commit changes and push to repository.
+
+	touch README
+	git add README
+	git add -n .
+		do not perform actions, just print output
+	git add .
+	git commit -m 'message'
+	git push origin master

@@ -1,0 +1,23 @@
+= Generate and run a simple blog application
+
+== Resources
+
+	http://guides.rubyonrails.org/getting_started.html
+
+== Introduction
+
+This example is from the Getting Started with Rails Guide. This is only part of the application from the guide. This example implements the posts but not the comments.
+
+== Execution
+
+Generate and run the example.
+
+	cd   010_post
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+	bash 003_reset_database.sh
+	bash 004_rails_server.sh
+
+Delete the database, files and gemset.
+
+	bash 999_clean.sh

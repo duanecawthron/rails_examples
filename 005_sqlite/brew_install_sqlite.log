@@ -1,0 +1,7 @@
+$ brew install sqlite
+
+==> Downloading http://www.sqlite.org/sqlite-autoconf-3070603.tar.gz
+######################################################################## 100.0%
+==> ./configure --prefix=/usr/local/Cellar/sqlite/3.7.6.3 --disable-dependency-tracking
+==> make install
+/usr/local/Cellar/sqlite/3.7.6.3: 8 files, 2.7M, built in 91 seconds

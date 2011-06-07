@@ -1,1 +1,32 @@
-= Rails Examples
+= Ruby on Rails Examples
+
+These examples are experiments used to learn about rails.
+
+== Resources
+
+	http://guides.rubyonrails.org
+	http://www.ruby-toolbox.com/
+	http://railscasts.com/
+	http://www.opensourcerails.com/
+
+== Rails Setup
+
+These examples demonstrate how to setup your environment for rails development.
+
+000_homebrew:: Install Homebrew, the missing package manager for OS X
+001_pip:: Install pip, pip installs Python packages
+002_git:: Install Git, the distributed source control tool
+003_mercurial:: Install Mercurial, the distributed source control tool
+004_mysql:: Install MySQL open source database
+005_sqlite:: Install SQLite open source database
+006_rvm:: Install Ruby Version Manager (RVM) 
+007_rubygems:: Install RubyGems, a package management framework for Ruby
+008_bundle:: Install Bundler to manage a Ruby application dependencies
+009_vim_scripts:: Vim Scripts run vim from a bash script to edit a file
+
+== Rails Examples
+
+These examples demonstrate how to use various features of rails.
+
+009_post:: Generate and run a simple blog application
+010_post_mysql:: Generate and run a simple blog application using MySQL

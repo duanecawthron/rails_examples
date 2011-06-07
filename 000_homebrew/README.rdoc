@@ -1,0 +1,40 @@
+= Install Homebrew, the missing package manager for OS X
+
+Homebrew is great.
+
+1. Homebrew is simple.
+2. Homebrew is safe. It does not require use of sudo.
+3. Homebrew installs everything in one place.
+
+== Resources
+
+	http://mxcl.github.com/homebrew/
+	https://github.com/mxcl/homebrew/
+	https://github.com/mxcl/homebrew/wiki/installation
+
+== Installation on Mac OS X Snow Leopard v10.6.7
+
+Follow the instructions on the Wiki, "Installing to /usr/local for Developers".
+
+	sudo mkdir -p /usr/local
+	sudo chown -R $USER /usr/local
+	curl -Lsf http://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C/usr/local
+
+== Commands
+
+	man brew
+	brew install <formula>
+	brew remove  <formula>
+	brew list
+		List all installed formulae
+	brew search <text>
+
+== Favorites
+
+	brew install git
+	brew install mysql
+	brew install sqlite
+
+== Notes
+
+File are downloaded and cached to /Users/cawthron/Library/Caches/Homebrew

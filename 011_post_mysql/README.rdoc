@@ -1,0 +1,32 @@
+= Generate and run a simple blog application using MySQL
+
+== Resources
+
+	http://guides.rubyonrails.org/getting_started.html
+
+== Introduction
+
+This example is from the Getting Started with Rails Guide. This is only part of the application from the guide. This example implements the posts but not the comments.
+
+These two examples are the same except one uses sqlite and the other uses mysql.
+
+	010_post
+	011_post_mysql
+
+Take a look at the differences.
+
+	diff 010_post 011_post_mysql
+
+== Execution
+
+Generate and run the example.
+
+	cd   011_post_mysql
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+	bash 003_reset_database.sh
+	bash 004_rails_server.sh
+
+Delete the database, files and gemset.
+
+	bash 999_clean.sh
