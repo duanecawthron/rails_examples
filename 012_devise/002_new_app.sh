@@ -19,11 +19,6 @@ cp ../../src/Gemfile .
 cd  $TOP/tmp/myapp
 rails generate controller home index
 
-cat << EOF > app/views/home/index.html.erb
-<h1>Home#index</h1>
-<p>Howdy, Dude</p>
-EOF
-
 rm public/index.html
 
 cat << EOF > config/routes.rb
@@ -31,6 +26,10 @@ Myapp::Application.routes.draw do
   get "home/index"
   root :to => "home#index"
 end
+EOF
+
+cat << EOF > app/views/home/index.html.erb
+<h1>Hello, Rails!</h1>
 EOF
 
 # ---------------- devise
