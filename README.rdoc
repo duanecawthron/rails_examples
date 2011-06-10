@@ -31,3 +31,4 @@ These examples demonstrate how to use various features of rails.
 009_post:: Generate and run a simple blog application
 010_post_mysql:: Generate and run a simple blog application using MySQL
 012_devise:: Rails Authentication with Devise
+013_post_devise:: Generate and run a simple blog application
