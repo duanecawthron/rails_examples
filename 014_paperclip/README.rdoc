@@ -1,0 +1,24 @@
+= Generate and run a simple application with file uploads
+
+== Resources
+
+	https://github.com/thoughtbot/paperclip
+	http://guides.rubyonrails.org/getting_started.html
+
+== Introduction
+
+This example adds file uploads with paperclip to 010_post.
+
+== Execution
+
+Generate and run the example.
+
+	cd   014_paperclip
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+	bash 003_reset_database.sh
+	bash 004_rails_server.sh
+
+Delete the database, files and gemset.
+
+	bash 999_clean.sh
