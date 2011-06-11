@@ -39,8 +39,25 @@ EOF
 
 rails generate paperclip Post avatar
 
-vim -s $TOP/src/use_post_create.vim $TOP/tmp/myapp/app/controllers/posts_controller.rb
+# add
+#   has_attached_file :avatar
 vim -s $TOP/src/add_has_attached_file.vim $TOP/tmp/myapp/app/models/post.rb
+
+# add multipart to form_for
+#   form_for(@post, :html => { :multipart => true })
 vim -s $TOP/src/add_form_multipart.vim $TOP/tmp/myapp/app/views/posts/_form.html.erb
+
+# add file field to form
+#   <div class="field">
+#     <%= f.file_field :avatar %>
+#   </div>
 vim -s $TOP/src/add_form_file_field.vim $TOP/tmp/myapp/app/views/posts/_form.html.erb
+
+# show the image
+#   <%= image_tag @post.avatar.url %>
 vim -s $TOP/src/add_image.vim $TOP/tmp/myapp/app/views/posts/show.html.erb
+
+# What is the difference between create and new? Did it change in rails 3?
+# the wiki says use create, but the controler was created with new. It works with new.
+#   @user = User.create( params[:user] )
+# vim -s $TOP/src/use_post_create.vim $TOP/tmp/myapp/app/controllers/posts_controller.rb
