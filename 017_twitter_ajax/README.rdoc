@@ -1,0 +1,34 @@
+= Generate and run a simple twitter application with ajax
+
+== Resources
+
+	http://www.noupe.com/ajax/create-a-simple-twitter-app.html
+
+== Introduction
+
+This example is based on this tutorial.
+
+	"A Simple Twitter App with Ruby on Rails – Messages With Ajax" Part 1
+	From: http://www.noupe.com/ajax/create-a-simple-twitter-app.html
+
+The tutorial uses Rails 2.x. Here, the application has been converted to Rails 3.
+
+Three examples are based on this tutorial.
+
+	016_twitter
+	017_twitter_ajax
+	018_twitter_css
+
+== Execution
+
+Generate and run the example.
+
+	cd   017_twitter_ajax
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+	bash 003_reset_database.sh
+	bash 004_rails_server.sh
+
+Delete the database, files and gemset.
+
+	bash 999_clean.sh

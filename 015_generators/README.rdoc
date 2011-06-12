@@ -1,0 +1,43 @@
+= Run multiple generators and compare results
+
+== Resources
+
+	http://guides.rubyonrails.org/command_line.html
+
+== Introduction
+
+This example explores the use of rails generate model, controller, scaffold_controller, stylesheets and scaffold.
+
+Run this example and compare the generated applications. You will see that this:
+
+	rails generate scaffold Post message:text
+
+is equivalent to this:
+
+	rails generate model post message:text
+	rails generate scaffold_controller posts
+	rails generate stylesheets
+	add one line to config/routes.rb
+		resources :posts
+
+== Execution
+
+Generate and run the example.
+
+	cd   015_generators
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+
+Delete the database, files and gemset.
+
+	bash 999_clean.sh
+
+== Rails Commands
+
+	rails generate
+		list all generators
+	rails generate controller -h
+	rails generate model -h
+	rails generate scaffold -h
+	rails generate scaffold_controller -h
+	rails generate stylesheets -h

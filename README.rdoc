@@ -33,3 +33,7 @@ These examples demonstrate how to use various features of rails.
 012_devise:: Rails Authentication with Devise
 013_post_devise:: Generate and run a simple blog application
 014_paperclip:: Generate and run a simple application with file uploads
+015_generators:: Run multiple generators and compare results
+016_twitter:: Generate and run a simple twitter application
+017_twitter_ajax:: Generate and run a simple twitter application with ajax
+018_twitter_css:: Generate and run a simple twitter application with ajax and css
