@@ -28,10 +28,10 @@ These examples demonstrate how to setup your environment for rails development.
 
 These examples demonstrate how to use various features of rails.
 
-009_post:: Generate and run a simple blog application
-010_post_mysql:: Generate and run a simple blog application using MySQL
+010_post:: Generate and run a simple blog application
+011_post_mysql:: Generate and run a simple blog application using MySQL
 012_devise:: Rails Authentication with Devise
-013_post_devise:: Generate and run a simple blog application
+013_post_devise:: Generate and run a simple blog application with authentication
 014_paperclip:: Generate and run a simple application with file uploads
 015_generators:: Run multiple generators and compare results
 016_twitter:: Generate and run a simple twitter application
