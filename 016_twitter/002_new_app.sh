@@ -16,7 +16,7 @@ cp ../../src/Gemfile .
 
 # ---------------- http://www.noupe.com/ajax/create-a-simple-twitter-app.html
 
-cd $TOP/$PROJECT/myapp
+cd  $TOP/tmp/myapp
 
 rm -f ./public/index.html
 
