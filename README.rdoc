@@ -7,6 +7,8 @@ These examples are experiments used to learn about rails.
 	http://guides.rubyonrails.org
 	http://www.ruby-toolbox.com/
 	http://railscasts.com/
+	http://asciicasts.com/
+	http://pragprog.com/titles/rails4/agile-web-development-with-rails
 	http://www.opensourcerails.com/
 
 == Rails Setup
@@ -37,3 +39,4 @@ These examples demonstrate how to use various features of rails.
 016_twitter:: Generate and run a simple twitter application
 017_twitter_ajax:: Generate and run a simple twitter application with ajax
 018_twitter_css:: Generate and run a simple twitter application with ajax and css
+019_jquery:: Generate and run a simple application that uses jQuery

@@ -1,0 +1,28 @@
+= Generate and run a simple application that uses jQuery
+
+== Resources
+
+	https://github.com/indirect/jquery-rails
+	http://www.mkyong.com/jquery/jquery-hello-world
+
+	http://pragprog.com/titles/rails4/agile-web-development-with-rails
+	http://www.alfajango.com/blog/rails-prototype-to-jquery/
+	http://rubysource.com/using-coffeescript-in-rails/
+
+== Introduction
+
+Generate and run a simple rails 3.0 application that uses jQuery instead of Prototype.
+
+== Execution
+
+Generate and run the example.
+
+	cd   019_jquery
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+	bash 003_reset_database.sh
+	bash 004_rails_server.sh
+
+Delete the database, files and gemset.
+
+	bash 999_clean.sh
