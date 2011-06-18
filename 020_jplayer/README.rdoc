@@ -1,0 +1,27 @@
+= Generate and run a simple application that plays music with jPlayer
+
+== Resources
+
+	https://github.com/indirect/jquery-rails
+	http://www.jplayer.org/
+	http://www.jplayer.org/latest/demo-01/
+
+== Introduction
+
+Generate and run a simple rails 3.0 application that uses jQuery and plays music with jPlayer.
+
+This example is based on Jplayer demo-01.
+
+== Execution
+
+Generate and run the example.
+
+	cd   020_jplayer
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+	bash 003_reset_database.sh
+	bash 004_rails_server.sh
+
+Delete the database, files and gemset.
+
+	bash 999_clean.sh

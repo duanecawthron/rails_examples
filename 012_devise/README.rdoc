@@ -1,4 +1,4 @@
-= Rails Authentication with Devise
+= Generate and run a simple application with Devise authentication
 
 == Resources
 

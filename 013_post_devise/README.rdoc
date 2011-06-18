@@ -1,4 +1,4 @@
-= Generate and run a simple blog application with authentication
+= Generate and run a simple blog application with Devise authentication
 
 == Resources
 

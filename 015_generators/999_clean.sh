@@ -9,7 +9,7 @@ rake db:drop
 # ---------------- delete files
 
 cd $TOP
-rm -rf cd $TOP/tmp
+rm -rf $TOP/tmp
 
 # ---------------- delete gemset
 
