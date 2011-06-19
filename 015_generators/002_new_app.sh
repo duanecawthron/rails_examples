@@ -27,7 +27,7 @@ mv myapp m0c
 # Compared to m0, rails generate controller adds these files.
 #   Only in m0c/test/functional: home_controller_test.rb
 #   Only in m0c/test/unit: helpers/home_helper_test.rb
-# It also adds one line to m0/config/routes.rb m0c/config/routes.rb.
+# It also adds one line to m0/config/routes.rb.
 #   get "home/index"
 
 # ---------------- generate model
