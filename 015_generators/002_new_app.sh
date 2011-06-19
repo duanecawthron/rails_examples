@@ -11,14 +11,39 @@ function new_app {
 	cd  $TOP/tmp/myapp
 }
 
-# ---------------- generator model
+# ---------------- no generator
+
+new_app m0
+cd  $TOP/tmp
+mv myapp m0
+
+# ---------------- generate controller
+
+new_app m0c
+rails generate controller home index
+cd  $TOP/tmp
+mv myapp m0c
+
+# Compared to m0, rails generate controller adds these files.
+#   Only in m0c/test/functional: home_controller_test.rb
+#   Only in m0c/test/unit: helpers/home_helper_test.rb
+# It also adds one line to m0/config/routes.rb m0c/config/routes.rb.
+#   get "home/index"
+
+# ---------------- generate model
 
 new_app m1
 rails generate model post message:text
 cd  $TOP/tmp
 mv myapp m1
 
-# ---------------- generator model and controller
+# Compared to m0, rails generate model adds these files.
+#   Only in m1/app/models: post.rb
+#   Only in m1/db: migrate
+#   Only in m1/test/fixtures: posts.yml
+#   Only in m1/test/unit: post_test.rb
+
+# ---------------- generate model and controller
 
 new_app m2
 rails generate model post message:text
@@ -26,14 +51,14 @@ rails generate controller posts
 cd  $TOP/tmp
 mv myapp m2
 
-# Compare to m1, rails generate controller adds these files.
+# Compared to m1, rails generate controller adds these files.
 #   Only in m2/app/controllers: posts_controller.rb
 #   Only in m2/app/helpers: posts_helper.rb
 #   Only in m2/app/views: posts
 #   Only in m2/test/functional: posts_controller_test.rb
 #   Only in m2/test/unit: helpers
 
-# ---------------- generator model and scaffold_controller
+# ---------------- generate model and scaffold_controller
 
 new_app m3
 rails generate model post message:text
@@ -51,7 +76,7 @@ mv myapp m3
 #   Files app/controllers/posts_controller.rb differ
 #   Files test/functional/posts_controller_test.rb differ
 
-# ---------------- generator model, scaffold_controller and stylesheets
+# ---------------- generate model, scaffold_controller and stylesheets
 
 new_app m4
 rails generate model post message:text
@@ -63,12 +88,12 @@ mv myapp m4
 # Compared to m3, rails generate stylesheets adds this file.
 #   Only in m4/public/stylesheets: scaffold.css
 
-# ---------------- generator model and scaffold
+# ---------------- generate scaffold
 
 new_app m5
 rails generate scaffold Post message:text
 cd  $TOP/tmp
 mv myapp m5
 
-# Compared to m3, rails generate scaffold adds one line to m5/config/routes.rb.
+# Compared to m4, rails generate scaffold adds one line to m5/config/routes.rb.
 #   resources :posts
