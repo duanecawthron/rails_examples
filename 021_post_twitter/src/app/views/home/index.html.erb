@@ -1,0 +1,7 @@
+<% form_tag(:controller => "home", :action => "create") do %>
+  <%= label_tag(:content, "What are you doing?") %><br />
+  <%= text_area_tag(:content, nil, :size => "44x6") %><br />
+  <%= submit_tag("Update") %>
+<% end %>
+ 
+<%= render :partial => @posts %> 

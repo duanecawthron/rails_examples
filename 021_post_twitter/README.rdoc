@@ -1,0 +1,38 @@
+= Generate and run a simple twitter application
+
+== Resources
+
+	http://guides.rubyonrails.org/getting_started.html
+	http://www.noupe.com/ajax/create-a-simple-twitter-app.html
+
+== Introduction
+
+This example is a combination of two previous examples.
+
+	010_post
+	016_twitter
+
+Post is created with generate scaffold.
+
+	rails generate scaffold Post content:text
+
+A home controller is used instead of using post has the root page. 
+
+	src/app/controllers/home_controller.rb
+	src/app/views/home/index.html.erb
+	src/app/views/posts/_post.html.erb
+	src/config/routes.rb
+
+== Execution
+
+Generate and run the example.
+
+	cd   021_post_twitter
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+	bash 003_reset_database.sh
+	bash 004_rails_server.sh
+
+Delete the database, files and gemset.
+
+	bash 999_clean.sh
