@@ -1,0 +1,64 @@
+
+Before using brew to install mysql, I had a lot of trouble with mysql on OS X.
+
+The following notes are related to installing mysql.
+
+	http://dev.mysql.com/downloads/mysql/
+	mysql-5.5.12-osx10.6-x86_64.dmg
+
+---------------------------------------------------------------------------------------
+Uninstall MySQL
+	sudo rm -rf \
+	/usr/local/mysql \
+	/usr/local/mysql* \
+	/Library/PreferencePanes/MySQL.prefPane \
+	/Library/StartupItems/MySQLCOM \
+	/private/var/db/receipts/com.mysql.mysql.*
+	vi /etc/hostconfig and remove the line MYSQLCOM=-YES-
+	vi /Library/Receipts/InstallHistory.plist and remove entries
+
+---------------------------------------------------------------------------------------
+ISSUE - mysql2 did not work
+	rails server
+	Symbol not found: _mysql_get_client_info
+
+SOLUTION 1 - use mysql
+	edit these files and change mysql2 to mysql
+		/Users/cawthron/Desktop/Personal/rubyonrails/myapp/Gemfile
+		/Users/cawthron/Desktop/Personal/rubyonrails/myapp/config/database.yml
+
+SOLUTION 2
+	From: http://www.ruby-forum.com/topic/1440086
+	install 64-bit mysql - mysql-5.5.12-osx10.6-x86_64.dmg
+	sudo gem install mysql2 -- --with-mysql-config=/usr/local/mysql-5.5.12-osx10.6-x86_64/bin/mysql_config
+
+---------------------------------------------------------------------------------------
+ISSUE - must use mysql2 (0.2.x) with Rails <= 3.0.x
+	WARNING: This version of mysql2 (0.3.2) doesn't ship with the ActiveRecord adapter bundled anymore as it's now part of Rails 3.1
+	WARNING: Please use the 0.2.x releases if you plan on using it in Rails <= 3.0.x
+
+SOLUTION
+	sudo gem uninstall mysql2
+	sudo gem install mysql2 -v 0.2.6
+OR
+	sudo gem uninstall mysql2
+	in Gemfile gem 'mysql2', '< 0.3'
+	bundle update
+
+---------------------------------------------------------------------------------------
+ISSUE - Could not find mysql2-0.3.2 in any of the sources
+	rails server
+
+SOLUTION
+	edit Gemfile
+		gem 'mysql2', '< 0.3'
+
+---------------------------------------------------------------------------------------
+ISSUE - Library not loaded: libmysqlclient.18.dylib 
+	rails server
+	/Library/Ruby/Gems/1.8/gems/mysql2-0.2.6/lib/mysql2/mysql2.bundle: dlopen(/Library/Ruby/Gems/1.8/gems/mysql2-0.2.6/lib/mysql2/mysql2.bundle, 9): Library not loaded: libmysqlclient.18.dylib (LoadError)
+
+SOLUTION
+	From: http://www.blog.bridgeutopiaweb.com/post/how-to-fix-mysql-load-issues-on-mac-os-x/
+	export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
+	rails server

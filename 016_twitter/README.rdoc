@@ -32,3 +32,27 @@ Generate and run the example.
 Delete the database, files and gemset.
 
 	bash 999_clean.sh
+
+== How to convert Rails 2 routes to Rails 3 routes
+
+From: http://omgbloglol.com/post/353978923/the-path-to-rails-3-approaching-the-upgrade
+
+Rails 2.x routes.rb
+
+    map.root :controller => 'home', :action => 'index'
+    map.connect ':controller/:action/:id.:format'
+    map.connect ':controller/:action/:id'
+
+Rails 3.0 config/routes.rb
+
+    root :to => 'home#index'
+    match '/:controller(/:action(/:id))'
+
+== form_remote_tag has been deprecated in Rails 3
+
+From: http://railsforum.com/viewtopic.php?id=41439
+
+	form_remote_tag has been deprecated in Rails 3, use instead:
+	form_tag :url => {...}, :remote => true
+	form_tag { :action => 'add_to_cart', :id => product}, :remote => true, :method => :get
+	(leave out the ":method" if you need a POST instead of a GET):
