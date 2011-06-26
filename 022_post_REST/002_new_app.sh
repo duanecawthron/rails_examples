@@ -28,16 +28,13 @@ Myapp::Application.routes.draw do
 end
 EOF
 
-rails generate scaffold Post name:string title:string content:text
+rails generate scaffold Post content:text
 
 cat << EOF > app/views/home/index.html.erb
 <h1>Hello, Rails!</h1>
 <%= link_to "My Blog", posts_path %>
 EOF
 
-# ---------------- generate documentation
+# ----------------
 
-cd  $TOP/tmp/myapp
-
-# rake doc:rails
-rake doc:app
+cp $TOP/src/app/controllers/posts_controller.rb $TOP/tmp/myapp/app/controllers

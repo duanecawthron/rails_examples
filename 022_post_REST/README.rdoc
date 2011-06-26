@@ -1,0 +1,35 @@
+= Generate and run an application with a REST API that responds to JSON requests
+
+== Resources
+
+	http://en.wikipedia.org/wiki/Representational_State_Transfer
+	http://gowalla.com/api/docs - call API with curl
+	http://blog.project-sierra.de/archives/1788 - call API with jQuery
+
+== Introduction
+
+The rails controller implements an API that follows the REST conventions. This example calls the API.
+
+This example is based on a previous example.
+
+	010_post
+
+The posts_controller.rb is modified to respond to JSON requests.
+
+== Execution
+
+Generate and run the example.
+
+	cd   022_post_REST
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+	bash 003_reset_database.sh
+	bash 004_rails_server.sh
+
+Run this script to exorcise the the API.
+
+	bash 010_curl.sh
+
+Delete the database, files and gemset.
+
+	bash 999_clean.sh
