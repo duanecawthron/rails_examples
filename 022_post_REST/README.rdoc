@@ -6,6 +6,13 @@
 	http://gowalla.com/api/docs - call API with curl
 	http://blog.project-sierra.de/archives/1788 - call API with jQuery
 
+	https://github.com/jquery/jquery-tmpl
+	http://api.jquery.com/category/plugins/templates/
+	http://stackoverflow.com/questions/6249391/how-to-render-a-single-json-property-using-jquerytemplate
+	http://jsfiddle.net/rniemeyer/2evHS/
+	http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js
+	http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js
+
 == Introduction
 
 The rails controller implements an API that follows the REST conventions. This example calls the API.

@@ -1,0 +1,112 @@
+<h1>Hello, Rails!</h1>
+
+<script id="Template3" type="text/html">
+    <span>${post.content}</span>
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	$.ajax({
+		url: "http://localhost:3000/posts",
+		dataType: "json",
+		type: "GET",
+		processData: false,
+		contentType: "application/json",
+		success: function(msg){
+			if (! $.isArray(msg)) alert("GET posts msg is not array");
+			var i=0;
+			for (i=0; i<msg.length; i++) {
+				$("<br/>all posts<br/>").appendTo("#msgid");
+				$("#Template3").tmpl(msg[i]).appendTo("#msgid");
+			}
+		}
+	});
+
+	$.ajax({
+		url: "http://localhost:3000/posts/1",
+		dataType: "json",
+		type: "GET",
+		processData: false,
+		contentType: "application/json",
+		success: function(msg){
+			$("<br/>post 1<br/>").appendTo("#msgid");
+			$("#Template3").tmpl(msg).appendTo("#msgid");
+		}
+	});
+
+	$.ajax({
+		url: "http://localhost:3000/posts",
+		dataType: "json",
+		type: "POST",
+		processData: false,
+		contentType: "application/json",
+		data: "{\"post\":{\"content\":\"test\"}}",
+		success: function(msg){
+			$("<br/> add new post").appendTo("#msgid");
+		}
+	});
+
+	$.ajax({
+		url: "http://localhost:3000/posts/1",
+		dataType: "json",
+		type: "POST",
+		processData: false,
+		contentType: "application/json",
+		data: "{\"post\":{\"content\":\"abc\"}}",
+		beforeSend: function(xhr) {
+			xhr.setRequestHeader("X-Http-Method-Override", "PUT");
+		},
+		success: function(msg){
+			$("<br/> update post 1").appendTo("#msgid");
+		}
+	});
+
+	$.ajax({
+		url: "http://localhost:3000/posts/1",
+		dataType: "json",
+		type: "GET",
+		processData: false,
+		contentType: "application/json",
+		success: function(msg){
+			$("<br/>post 1<br/>").appendTo("#msgid");
+			$("#Template3").tmpl(msg).appendTo("#msgid");
+		}
+	});
+
+	$.ajax({
+		url: "http://localhost:3000/posts/1",
+		dataType: "json",
+		type: "POST",
+		processData: false,
+		contentType: "application/json",
+		beforeSend: function(xhr)   
+		{
+			xhr.setRequestHeader("X-Http-Method-Override", "DELETE");
+		},
+		success: function(msg){
+			$("<br/> delete post 1").appendTo("#msgid");
+		}
+	});
+
+	$.ajax({
+		url: "http://localhost:3000/posts",
+		dataType: "json",
+		type: "GET",
+		processData: false,
+		contentType: "application/json",
+		success: function(msg){
+			var i=0;
+			for (i=0; i<msg.length; i++) {
+				$("<br/>all posts<br/>").appendTo("#msgid");
+				$("#Template3").tmpl(msg[i]).appendTo("#msgid");
+			}
+		}
+	});
+
+});
+</script>
+ 
+<div id="msgid">
+</div>

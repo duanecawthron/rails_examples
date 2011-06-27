@@ -35,6 +35,17 @@ cat << EOF > app/views/home/index.html.erb
 <%= link_to "My Blog", posts_path %>
 EOF
 
-# ----------------
+# ---------------- add respond_to format.json to the controller
 
 cp $TOP/src/app/controllers/posts_controller.rb $TOP/tmp/myapp/app/controllers
+
+# ---------------- https://github.com/indirect/jquery-rails
+
+rails generate jquery:install --ui --force
+
+# ---------------- http://blog.project-sierra.de/archives/1788
+
+$TOP/src/scripts/download.sh
+cp $TOP/src/download/jquery.tmpl.js $TOP/tmp/myapp/public/javascripts
+cp $TOP/src/app/views/home/index.html.erb $TOP/tmp/myapp/app/views/home/index.html.erb
+vim -s $TOP/src/scripts/add_javascript_include_tag.vim $TOP/tmp/myapp/app/views/layouts/application.html.erb
