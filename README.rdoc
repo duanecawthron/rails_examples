@@ -43,4 +43,4 @@ These examples demonstrate how to use various features of rails.
 019_jquery:: Generate and run a simple application that uses jQuery
 020_jplayer:: Generate and run a simple application that plays music with jPlayer
 021_post_twitter:: Generate and run a simple twitter application
-022_post_REST:: Generate and run an application with a REST API that responds to JSON requests
+022_post_REST:: Generate and run an application, call the REST API with curl and jQuery

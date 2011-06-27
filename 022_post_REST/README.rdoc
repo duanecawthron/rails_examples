@@ -1,4 +1,4 @@
-= Generate and run an application with a REST API that responds to JSON requests
+= Generate and run an application, call the REST API with curl and jQuery
 
 == Resources
 
@@ -36,6 +36,8 @@ Generate and run the example.
 Run this script to exorcise the the API.
 
 	bash 010_curl.sh
+
+Or ,browse to http://localhost:3000 to call the API with jQuery.
 
 Delete the database, files and gemset.
 
