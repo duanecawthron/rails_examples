@@ -28,16 +28,12 @@ Myapp::Application.routes.draw do
 end
 EOF
 
-rails generate scaffold Post content:text
+rails generate scaffold Post name:string title:string content:text
 
 cat << EOF > app/views/home/index.html.erb
 <h1>Hello, Rails!</h1>
 <%= link_to "My Blog", posts_path %>
 EOF
-
-# ---------------- https://github.com/indirect/jquery-rails
-
-rails generate jquery:install --ui --force
 
 # ---------------- https://github.com/mislav/will_paginate
 
