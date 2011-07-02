@@ -44,3 +44,4 @@ These examples demonstrate how to use various features of rails.
 020_jplayer:: Generate and run a simple application that plays music with jPlayer
 021_post_twitter:: Generate and run a simple twitter application
 022_post_REST:: Generate and run an application, call the REST API with curl and jQuery
+023_will_paginate:: Generate and run an application that uses will_paginate for pagination
