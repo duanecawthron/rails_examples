@@ -45,3 +45,4 @@ These examples demonstrate how to use various features of rails.
 021_post_twitter:: Generate and run a simple twitter application
 022_post_REST:: Generate and run an application, call the REST API with curl and jQuery
 023_will_paginate:: Generate and run an application that uses will_paginate for pagination
+024_rdoc:: Generate documentation for a simple blog application

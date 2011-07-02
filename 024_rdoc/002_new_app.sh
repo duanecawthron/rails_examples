@@ -35,3 +35,11 @@ cat << EOF > app/views/home/index.html.erb
 <%= link_to "My Blog", posts_path %>
 EOF
 
+# ---------------- generate documentation
+
+cd  $TOP/tmp/myapp
+
+# rake doc:rails
+rake doc:app
+
+echo See docs in $TOP/tmp/myapp/doc/app/index.html
