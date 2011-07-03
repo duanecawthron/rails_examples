@@ -46,6 +46,8 @@ vim -s $TOP/src/scripts/add_responds_to_js.vim $TOP/tmp/myapp/app/controllers/po
 
 # ---------------- add posts javascript
 #
+# http://localhost:3000/posts.js?page=2
+#
 # use sleep 2 to simulate slow response from server
 #
 
