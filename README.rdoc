@@ -48,3 +48,4 @@ These examples demonstrate how to use various features of rails.
 024_rdoc:: Generate documentation for a simple blog application
 025_render_partial:: Generate and run an application to demonstrate render :partial
 026_endless_page:: Generate and run an application that uses endless paging
+027_endless_jquery:: Generate and run an application that uses endless paging using jQuery
