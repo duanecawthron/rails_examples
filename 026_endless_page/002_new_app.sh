@@ -73,6 +73,10 @@ EOF
 # ---------------- render the partial
 
 cat << EOF > app/views/posts/index.html.erb
+<script type="text/javascript">
+document.observe('dom:loaded', checkScroll);
+</script>
+
 <h1>Listing posts</h1>
 
 <%= link_to 'New Post', new_post_path %>
@@ -109,6 +113,4 @@ function scrollDistanceFromBottom(argument) {
 function pageHeight() {
   return Math.max(document.body.scrollHeight, document.body.offsetHeight);
 }
-
-document.observe('dom:loaded', checkScroll);
 EOF
