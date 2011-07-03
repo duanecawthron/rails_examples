@@ -46,4 +46,5 @@ These examples demonstrate how to use various features of rails.
 022_post_REST:: Generate and run an application, call the REST API with curl and jQuery
 023_will_paginate:: Generate and run an application that uses will_paginate for pagination
 024_rdoc:: Generate documentation for a simple blog application
-025_render_partial:: Generate and run an application to demonstrate render :partial'
+025_render_partial:: Generate and run an application to demonstrate render :partial
+026_endless_page:: Generate and run an application that uses endless paging
