@@ -49,3 +49,4 @@ These examples demonstrate how to use various features of rails.
 025_render_partial:: Generate and run an application to demonstrate render :partial
 026_endless_page:: Generate and run an application that uses endless paging
 027_endless_jquery:: Generate and run an application that uses endless paging using jQuery
+028_kaminari:: Generate and run an application that uses Kaminari for pagination

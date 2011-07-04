@@ -1,8 +1,9 @@
-= Generate and run an application that uses will_paginate for pagination
+= Generate and run an application that uses WillPaginate for pagination
 
 == Resources
 
 	https://github.com/mislav/will_paginate
+	http://railscasts.com/episodes/51-will-paginate
 
 == Introduction
 

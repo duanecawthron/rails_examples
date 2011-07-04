@@ -1,0 +1,26 @@
+= Generate and run an application that uses Kaminari for pagination
+
+== Resources
+
+	https://github.com/amatsuda/kaminari
+	http://railscasts.com/episodes/254-pagination-with-kaminari
+
+== Introduction
+
+This example is based on a previous example. Use Kaminari instead of WillPaginate for pagination.
+
+	023_will_paginate
+
+== Execution
+
+Generate and run the example.
+
+	cd   028_kaminari
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+	bash 003_reset_database.sh
+	bash 004_rails_server.sh
+
+Delete the database, files and gemset.
+
+	bash 999_clean.sh
