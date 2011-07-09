@@ -50,3 +50,5 @@ These examples demonstrate how to use various features of rails.
 026_endless_page:: Generate and run an application that uses endless paging
 027_endless_jquery:: Generate and run an application that uses endless paging using jQuery
 028_kaminari:: Generate and run an application that uses Kaminari for pagination
+029_mongodb:: Install MongoDB, an open source, scalable, schema-free, document-oriented database
+030_pkg_kaminari:: Fetch the source for Kaminari, run the tests and build the gem
