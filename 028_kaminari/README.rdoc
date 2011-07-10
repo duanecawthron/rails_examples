@@ -24,3 +24,23 @@ Generate and run the example.
 Delete the database, files and gemset.
 
 	bash 999_clean.sh
+
+== ISSUE: warning: multiple values for a block parameter 
+
+This error:
+
+ 	kaminari-0.12.4/lib/kaminari/models/active_record_extension.rb:15: warning: multiple values for a block parameter (0 for 1)
+	
+was called by this command in .../app/controllers/posts_controller.rb.
+
+	@count = Post.page().count();
+
+SOLUTION
+
+The page scope in kaminari/models/active_record_extension.rb expects an arg for page number.
+
+	scope :page, Proc.new {|num| limit(default_per_page).offset(default_per_page * ([num.to_i, 1].max - 1)) }
+
+Pass an arg to page.
+
+	@count = Post.page(nil).count();
