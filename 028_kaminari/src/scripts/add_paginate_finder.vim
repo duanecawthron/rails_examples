@@ -3,10 +3,10 @@
 :1
 /def index
 A
-@count = Post.page().count();
-@total_count = Post.page().total_count();
+@count = Post.page(nil).count();
+@total_count = Post.page(nil).total_count();
 
-@num_pages = Post.page().per(5).num_pages();
+@num_pages = Post.page(nil).per(5).num_pages();
 @current_page = Post.page(params[:page]).per(5).current_page();
 @first_page = Post.page(params[:page]).per(5).first_page?();
 @last_page = Post.page(params[:page]).per(5).last_page?();
