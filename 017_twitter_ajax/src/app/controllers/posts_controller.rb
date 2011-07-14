@@ -12,6 +12,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.html { redirect_to posts_path }
+        format.js
       else
         flash[:notice] = "Message failed to save."
         format.html { redirect_to posts_path }

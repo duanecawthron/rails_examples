@@ -32,3 +32,35 @@ Generate and run the example.
 Delete the database, files and gemset.
 
 	bash 999_clean.sh
+
+== ISSUE 
+
+Adding a new post was not using ajax. This form_tag was the problem.
+
+form_tag(:controller => "posts", :action => "create", :remote => "true") do
+
+WARNING: Do not use the above. It does not work.
+
+=== SOLUTION 1: This is used in 017_twitter_ajax
+
+http://stackoverflow.com/questions/3507551/remote-form-tag-in-rails3-without-a-named-route
+
+The only way I found to do it is to wrap the url parameters in the url_for method.
+
+form_tag url_for(:action => :create, :id => @artist.id), :remote => true do 
+
+However, if you need to the pass the method parameter you might need to wrap that and the remote in parentheses.
+
+=== SOLUTION 2: This is used on 018_twitter_css
+
+From the same stackoverflow link
+
+Here's what you need:
+
+form_tag( { :controller => :magic, :action => :search, :method => post }, { :remote => true } ) do ....
+
+Its sort of a bad design, but the Rails form_tag methods require TWO hashes - the url_for options hash, and the regular options hash. This has generated much confusion for many Rails programmers. If you don't add the delineating hash boundaries, all of the options get passed to url_for(), ruining the :remote => true.
+
+This will add data-remote="true" to your form (to be used with unobtrusive javascript, as others have mentioned). From there you need to create the appropriate AJAX to binding to do the request.
+
+Though really you should be using a named route like magic_search_path instead of the controller/action parameters.
