@@ -52,3 +52,4 @@ These examples demonstrate how to use various features of rails.
 028_kaminari:: Generate and run an application that uses Kaminari for pagination
 029_mongodb:: Install MongoDB, an open source, scalable, schema-free, document-oriented database
 030_pkg_kaminari:: Fetch the source for Kaminari, run the tests and build the gem
+031_twitter_kaminari:: Generate and run a simple twitter application that uses jQuery and Kaminari
