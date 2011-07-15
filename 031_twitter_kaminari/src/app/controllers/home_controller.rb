@@ -3,15 +3,16 @@ class HomeController < ApplicationController
   def index
     @per_page = 5
 
-    @total_count = Post.page(nil).total_count();
     num_pages = Post.page(nil).per(@per_page).num_pages();
-    if (params[:page] == nil)
+    if (params[:page] == nil || params[:page].to_i > num_pages)
       @page_number = num_pages
     else
-      @page_number = params[:page]
+      @page_number = params[:page].to_i
     end
+
     # what if new posts are added after we get total_count and before we get posts?
-    @posts = Post.order('created_at').page(@page_number).per(@per_page).skip(params[:skip])
+    @total_count = ((@page_number - 1) * @per_page) + Post.page(@page_number).per(@per_page).count();
+    @posts = Post.order('created_at').page(@page_number).per(@per_page)
     @posts = @posts.reverse
 
     respond_to do |format|
@@ -44,8 +45,8 @@ class HomeController < ApplicationController
   end
 
   def more
-    @total_count = Post.page(nil).total_count();
-    @posts = Post.order('created_at').page(params[:page]).per(params[:per_page]).skip(params[:skip])
+    @total_count = params[:skip].to_i + Post.page(1).per(params[:per_page]).skip(params[:skip]).count()
+    @posts = Post.order('created_at').page(1).per(params[:per_page]).skip(params[:skip])
     @posts = @posts.reverse
 
     respond_to do |format|

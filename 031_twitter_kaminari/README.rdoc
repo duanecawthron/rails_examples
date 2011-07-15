@@ -29,3 +29,13 @@ Generate and run the example.
 Delete the database, files and gemset.
 
 	bash 999_clean.sh
+
+== Questions
+
+How often should checkCount() be called?
+
+How many should handleMoreButton() get?
+
+Does this app work on IE?
+
+How should this app work with javascript disabled? How does twitter work with javascript disabled?

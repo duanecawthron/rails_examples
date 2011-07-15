@@ -2,8 +2,9 @@ var highestClientCount = 0; // id of the most recent post displayed on the page
 var highestServerCount = 0; // id of the most recent post available form the server
 var lowestClientPage =  -1; // lowest page number of posts displayed on the page
 var checkScrollTimeout = 250;
-var checkCountTimeout = 1000;
-var morePerPage = 5;
+var checkCountTimeout = 5000;
+var handleMoreButtonPerPage = 5;
+var handleMoreButtonRunning = false;
 
 function gotPageFromServer(count, pageNumber) {
 	if (count > highestClientCount) {
@@ -30,16 +31,23 @@ function gotMoreFromServer(count) {
 	checkCount();
 }
 
-function gotCountFromServer(count) {
-	if (count > highestServerCount) {
-		highestServerCount = count;
+function showOrHideMoreButton() {
+	if (handleMoreButtonRunning) {
+		$("#more_form").hide();
 	}
-	if (highestServerCount > highestClientCount)
+	else if (highestServerCount > highestClientCount)
 		$("#more_form").show();
 	else {
 		$("#more_form").hide();
 		setTimeout("checkCount()", checkCountTimeout);
 	}
+}
+
+function gotCountFromServer(count) {
+	if (count > highestServerCount) {
+		highestServerCount = count;
+	}
+	showOrHideMoreButton();
 }
 
 function checkCount() {
@@ -81,10 +89,18 @@ function pageHeight() {
 }
 
 function handleMoreButton() {
+	if (handleMoreButtonRunning) return;
+	handleMoreButtonRunning = true;
+	showOrHideMoreButton();
 	$.ajax({
-		url: "http://localhost:3000/more.js?page=0&per_page=" + morePerPage + "&skip=" + highestClientCount,
+		url: "http://localhost:3000/more.js?page=1&per_page=" + handleMoreButtonPerPage + "&skip=" + highestClientCount,
 		dataType: "script",
-		type: "GET"
+		type: "GET",
+		complete: function(){
+			handleMoreButtonRunning = false;
+			showOrHideMoreButton();
+			checkCount();
+		}
 	});
 	// http://localhost:3000/home.js will call gotMoreFromServer()
 }
