@@ -1,0 +1,29 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#more_form").hide();
+	$("#more_btn").click(function(event){
+		handleMoreButton();
+		event.preventDefault();
+	});
+	gotPageFromServer(<%= @total_count %>, <%= @page_number %>);
+	checkCount();
+});
+</script>
+
+<% form_tag (url_for(:controller => "home", :action => "create"), :remote => true) do  %>
+  <%= label_tag(:content, "What are you doing?") %><br />
+  <%= text_area_tag(:content, nil, :size => "44x6") %><br />
+  <%= submit_tag("Update") %>
+<% end %>
+
+<div id="more_form">
+	<% form_tag (url_for(:controller => "home", :action => "more"), :remote => true) do  %>
+		<%= submit_tag("More", :id => "more_btn") %>
+	<% end %>
+</div>
+
+<div id="posts">
+  <%= render :partial => @posts %> 
+</div>
+
+<p id="loading">Loading more page results...</p>

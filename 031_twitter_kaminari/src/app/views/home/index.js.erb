@@ -1,0 +1,3 @@
+// <% sleep 2 %> // simulate network delay
+$("#posts").append("<%= escape_javascript(render(:partial => @posts)) %>");
+gotPageFromServer(<%= @total_count %>, <%= @page_number %>);

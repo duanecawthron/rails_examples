@@ -1,0 +1,3 @@
+// <% sleep 2 %> // simulate network delay
+$("#posts").prepend("<%= escape_javascript(render(:partial => @posts)) %>");
+gotMoreFromServer(<%= @total_count %>);
