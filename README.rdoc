@@ -4,13 +4,13 @@ These examples are experiments used to learn about rails.
 
 == Resources
 
-	http://api.rubyonrails.org/
-	http://guides.rubyonrails.org
-	http://www.ruby-toolbox.com/
-	http://railscasts.com/
-	http://asciicasts.com/
-	http://pragprog.com/titles/rails4/agile-web-development-with-rails
-	http://www.opensourcerails.com/
+  http://api.rubyonrails.org/
+  http://guides.rubyonrails.org
+  http://www.ruby-toolbox.com/
+  http://railscasts.com/
+  http://asciicasts.com/
+  http://pragprog.com/titles/rails4/agile-web-development-with-rails
+  http://www.opensourcerails.com/
 
 == Rails Setup
 
