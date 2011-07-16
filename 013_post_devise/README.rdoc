@@ -2,9 +2,9 @@
 
 == Resources
 
-	http://guides.rubyonrails.org/getting_started.html
-	http://guides.rubyonrails.org/association_basics.html
-	https://github.com/plataformatec/devise
+    http://guides.rubyonrails.org/getting_started.html
+    http://guides.rubyonrails.org/association_basics.html
+    https://github.com/plataformatec/devise
 
 == Introduction
 
@@ -12,19 +12,19 @@ This example is the result of combining 010_post and 012_devise.
 
 This is also the first example that uses associations.
 
-	post belongs_to user
-	user has_many posts
+    post belongs_to user
+    user has_many posts
 
 == Execution
 
 Generate and run the example.
 
-	cd   013_post_devise
-	bash 001_install_gems.sh
-	bash 002_new_app.sh
-	bash 003_reset_database.sh
-	bash 004_rails_server.sh
+    cd   013_post_devise
+    bash 001_install_gems.sh
+    bash 002_new_app.sh
+    bash 003_reset_database.sh
+    bash 004_rails_server.sh
 
 Delete the database, files and gemset.
 
-	bash 999_clean.sh
+    bash 999_clean.sh

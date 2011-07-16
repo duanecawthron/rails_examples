@@ -2,15 +2,15 @@
 
 Resources
 
-	http://www.pip-installer.org/
-	http://www.pip-installer.org/en/latest/installing.html
+    http://www.pip-installer.org/
+    http://www.pip-installer.org/en/latest/installing.html
 
 I have not tried pip. brew search hg suggested this:
 
 Install Mercurial with pip:
 
-	easy_install pip && pip install Mercurial
+    easy_install pip && pip install Mercurial
 
 Or easy_install:
 
-	easy_install Mercurial
+    easy_install Mercurial

@@ -8,9 +8,9 @@ Run vim from a bash script to edit a file. This technique will be used in the fo
 
 Generate and run the example.
 
-	cd 009_vim_scripts
-	000_run_vim.sh
+    cd 009_vim_scripts
+    000_run_vim.sh
 
 Delete the files.
 
-	999_clean.sh
+    999_clean.sh

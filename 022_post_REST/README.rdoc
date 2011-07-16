@@ -2,16 +2,16 @@
 
 == Resources
 
-	http://en.wikipedia.org/wiki/Representational_State_Transfer
-	http://gowalla.com/api/docs - call API with curl
-	http://blog.project-sierra.de/archives/1788 - call API with jQuery
+    http://en.wikipedia.org/wiki/Representational_State_Transfer
+    http://gowalla.com/api/docs - call API with curl
+    http://blog.project-sierra.de/archives/1788 - call API with jQuery
 
-	https://github.com/jquery/jquery-tmpl
-	http://api.jquery.com/category/plugins/templates/
-	http://stackoverflow.com/questions/6249391/how-to-render-a-single-json-property-using-jquerytemplate
-	http://jsfiddle.net/rniemeyer/2evHS/
-	http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js
-	http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js
+    https://github.com/jquery/jquery-tmpl
+    http://api.jquery.com/category/plugins/templates/
+    http://stackoverflow.com/questions/6249391/how-to-render-a-single-json-property-using-jquerytemplate
+    http://jsfiddle.net/rniemeyer/2evHS/
+    http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js
+    http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js
 
 == Introduction
 
@@ -19,7 +19,7 @@ The rails controller implements an API that follows the REST conventions. This e
 
 This example is based on a previous example.
 
-	010_post
+    010_post
 
 The posts_controller.rb is modified to respond to JSON requests.
 
@@ -27,18 +27,18 @@ The posts_controller.rb is modified to respond to JSON requests.
 
 Generate and run the example.
 
-	cd   022_post_REST
-	bash 001_install_gems.sh
-	bash 002_new_app.sh
-	bash 003_reset_database.sh
-	bash 004_rails_server.sh
+    cd   022_post_REST
+    bash 001_install_gems.sh
+    bash 002_new_app.sh
+    bash 003_reset_database.sh
+    bash 004_rails_server.sh
 
 Run this script to exorcise the the API.
 
-	bash 010_curl.sh
+    bash 010_curl.sh
 
 Or ,browse to http://localhost:3000 to call the API with jQuery.
 
 Delete the database, files and gemset.
 
-	bash 999_clean.sh
+    bash 999_clean.sh

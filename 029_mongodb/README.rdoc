@@ -2,13 +2,13 @@
 
 Resources
 
-	http://www.mongodb.org/
+    http://www.mongodb.org/
 
 == Installation on Mac OS X Snow Leopard v10.6.7
 
 Install with brew. See brew_install_mongodb.log.
 
-	brew install mongodb
+    brew install mongodb
 
 == MongoDB Configuration
 
@@ -16,13 +16,13 @@ I did not modify the default config file.
 
 /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf
 
-	# Store data in /usr/local/var/mongodb instead of the default /data/db
-	dbpath = /usr/local/var/mongodb
-	# Only accept local connections
-	bind_ip = 127.0.0.1
-	# Enable Write Ahead Logging (not enabled by default in production deployments)
-	journal = true
+    # Store data in /usr/local/var/mongodb instead of the default /data/db
+    dbpath = /usr/local/var/mongodb
+    # Only accept local connections
+    bind_ip = 127.0.0.1
+    # Enable Write Ahead Logging (not enabled by default in production deployments)
+    journal = true
 
 == Start MongoDB
 
-	mongod run --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf
+    mongod run --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf

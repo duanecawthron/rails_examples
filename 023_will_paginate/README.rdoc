@@ -2,25 +2,25 @@
 
 == Resources
 
-	https://github.com/mislav/will_paginate
-	http://railscasts.com/episodes/51-will-paginate
+    https://github.com/mislav/will_paginate
+    http://railscasts.com/episodes/51-will-paginate
 
 == Introduction
 
 This example is based on a previous example. Add pagination.
 
-	010_post
+    010_post
 
 == Execution
 
 Generate and run the example.
 
-	cd   023_will_paginate
-	bash 001_install_gems.sh
-	bash 002_new_app.sh
-	bash 003_reset_database.sh
-	bash 004_rails_server.sh
+    cd   023_will_paginate
+    bash 001_install_gems.sh
+    bash 002_new_app.sh
+    bash 003_reset_database.sh
+    bash 004_rails_server.sh
 
 Delete the database, files and gemset.
 
-	bash 999_clean.sh
+    bash 999_clean.sh

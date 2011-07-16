@@ -8,32 +8,32 @@ Homebrew is great.
 
 == Resources
 
-	http://mxcl.github.com/homebrew/
-	https://github.com/mxcl/homebrew/
-	https://github.com/mxcl/homebrew/wiki/installation
+    http://mxcl.github.com/homebrew/
+    https://github.com/mxcl/homebrew/
+    https://github.com/mxcl/homebrew/wiki/installation
 
 == Installation on Mac OS X Snow Leopard v10.6.7
 
 Follow the instructions on the Wiki, "Installing to /usr/local for Developers".
 
-	sudo mkdir -p /usr/local
-	sudo chown -R $USER /usr/local
-	curl -Lsf http://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C/usr/local
+    sudo mkdir -p /usr/local
+    sudo chown -R $USER /usr/local
+    curl -Lsf http://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C/usr/local
 
 == Commands
 
-	man brew
-	brew install <formula>
-	brew remove  <formula>
-	brew list
-		List all installed formulae
-	brew search <text>
+    man brew
+    brew install <formula>
+    brew remove  <formula>
+    brew list
+        List all installed formulae
+    brew search <text>
 
 == Favorites
 
-	brew install git
-	brew install mysql
-	brew install sqlite
+    brew install git
+    brew install mysql
+    brew install sqlite
 
 == Notes
 

@@ -2,12 +2,12 @@
 
 == Resources
 
-	https://github.com/amatsuda/kaminari
-	http://asciicasts.com/episodes/245-new-gem-with-bundler
+    https://github.com/amatsuda/kaminari
+    http://asciicasts.com/episodes/245-new-gem-with-bundler
 
 I found some good information on this website. But, I was not able to build the gem.
 
-	http://keithschacht.com/creating-a-rails-3-engine-plugin-gem/
+    http://keithschacht.com/creating-a-rails-3-engine-plugin-gem/
 
 == Introduction
 
@@ -17,37 +17,37 @@ This example demonstrates how to build a gem from source.
 
 MongoDB is required to the the tests. See this previous example.
 
-	029_mongodb
+    029_mongodb
 
 == Execution
 
 Generate the example, run the tests and build the gem.
 
-	cd   030_pkg_kaminari
-	bash 001_install_gems.sh
-	bash 002_new_app.sh
+    cd   030_pkg_kaminari
+    bash 001_install_gems.sh
+    bash 002_new_app.sh
 
 Delete the files and gemset.
 
-	bash 999_clean.sh
+    bash 999_clean.sh
 
 == How to use the local gem in an application
 
 To use the local copy of Kaminar, add this line to Gemfile.
 
-	gem 'kaminari', :path => '.../030_pkg_kaminari/tmp/kaminari'
+    gem 'kaminari', :path => '.../030_pkg_kaminari/tmp/kaminari'
 
 == ISSUE: bundler searches up the directory tree for Gemfile
 
 I happened to have two Gemfiles in the path.
 
-	./src/Gemfile
-	./src/tmp/kaminari/Gemfile
+    ./src/Gemfile
+    ./src/tmp/kaminari/Gemfile
 
 Then I ran these commands:
 
-	cd ./src/tmp/kaminari
-	bundle install
+    cd ./src/tmp/kaminari
+    bundle install
 
 Bundler did not install the Gems in ./src/tmp/kaminari/Gemfile (my current directory). It was quite confusing until I realized that bundler was using ./src/Gemfile.
 

@@ -2,26 +2,26 @@
 
 == Resources
 
-	http://railscasts.com/episodes/136-jquery
-	http://railscasts.com/episodes/114-endless-page
-	https://github.com/mislav/will_paginate
+    http://railscasts.com/episodes/136-jquery
+    http://railscasts.com/episodes/114-endless-page
+    https://github.com/mislav/will_paginate
 
 == Introduction
 
 This example is based on a previous example. Use jQuery instead of Prototype.
 
-	026_endless_page
+    026_endless_page
 
 == Execution
 
 Generate and run the example.
 
-	cd   027_endless_jquery
-	bash 001_install_gems.sh
-	bash 002_new_app.sh
-	bash 003_reset_database.sh
-	bash 004_rails_server.sh
+    cd   027_endless_jquery
+    bash 001_install_gems.sh
+    bash 002_new_app.sh
+    bash 003_reset_database.sh
+    bash 004_rails_server.sh
 
 Delete the database, files and gemset.
 
-	bash 999_clean.sh
+    bash 999_clean.sh

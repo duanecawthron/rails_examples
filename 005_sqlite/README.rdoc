@@ -2,13 +2,13 @@
 
 Resources
 
-	http://www.sqlite.org/
+    http://www.sqlite.org/
 
 == Installation on Mac OS X Snow Leopard v10.6.7
 
 Install with brew. See brew_install_sqlite.log.
 
-	brew install sqlite
+    brew install sqlite
 
 == Configuration
 

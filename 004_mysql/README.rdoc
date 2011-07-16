@@ -2,44 +2,44 @@
 
 Resources
 
-	http://www.mysql.com/
-	http://dev.mysql.com/downloads/
+    http://www.mysql.com/
+    http://dev.mysql.com/downloads/
 
 == Installation on Mac OS X Snow Leopard v10.6.7
 
 Install with brew. See brew_install_mysql.log.
 
-	brew install mysql
+    brew install mysql
 
 == Configuration
 
 Setup MySQL to run as your user account. See mysql_install_db.log.
 
-	unset TMPDIR
-	mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
+    unset TMPDIR
+    mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
 
 == Commands
 
 Start and stop the server.
 
-	mysql.server start
-	mysql.server stop
+    mysql.server start
+    mysql.server stop
 
 Grant access to a database.
 
-	mysql -u root
-	GRANT ALL PRIVILEGES ON mydatabase.* TO myuser@localhost IDENTIFIED BY 'mypassword';
-	FLUSH PRIVILEGES;
-	QUIT;
+    mysql -u root
+    GRANT ALL PRIVILEGES ON mydatabase.* TO myuser@localhost IDENTIFIED BY 'mypassword';
+    FLUSH PRIVILEGES;
+    QUIT;
 
 Create and delete a database.
 
-	mysqladmin -f -u myuser --password=mypassword create mydatabase
-	mysqladmin -f -u myuser --password=mypassword drop mydatabase
+    mysqladmin -f -u myuser --password=mypassword create mydatabase
+    mysqladmin -f -u myuser --password=mypassword drop mydatabase
 
 Set mysql root password.
 
-	mysql -u root
-	UPDATE mysql.user SET Password=PASSWORD('rootpassword') WHERE User='root';
-	FLUSH PRIVILEGES;
-	QUIT;
+    mysql -u root
+    UPDATE mysql.user SET Password=PASSWORD('rootpassword') WHERE User='root';
+    FLUSH PRIVILEGES;
+    QUIT;

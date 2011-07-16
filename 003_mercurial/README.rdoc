@@ -2,60 +2,60 @@
 
 Resources
 
-	http://mercurial.selenic.com/
-	http://tortoisehg.bitbucket.org/
+    http://mercurial.selenic.com/
+    http://tortoisehg.bitbucket.org/
 
 == Installation on Mac OS X Snow Leopard v10.6.7
 
 Download and install the latest version from Selenic.
 
-	Mercurial-1.8.4-py2.6-macosx10.6.zip
+    Mercurial-1.8.4-py2.6-macosx10.6.zip
 
 I wanted to find out if installing Mercurial would install files in /usr/local. So, I ran this test.
 
-	sudo mv /usr/local /usr/local.1
-	run the installer
-	find  /usr/local -type f
+    sudo mv /usr/local /usr/local.1
+    run the installer
+    find  /usr/local -type f
 
 These files were installed.
 
-	/usr/local/bin/hg
-	/usr/local/share/man/man1/hg.1
-	/usr/local/share/man/man5/hgignore.5
-	/usr/local/share/man/man5/hgrc.5
+    /usr/local/bin/hg
+    /usr/local/share/man/man1/hg.1
+    /usr/local/share/man/man5/hgignore.5
+    /usr/local/share/man/man5/hgrc.5
 
 This looks OK to me. So, I restored my /usr/local and reinstalled Mercurial.
 
-	sudo mv /usr/local /usr/local_TO_BE_DELETED
-	sudo mv /usr/local.1 /usr/local
-	run the installer again
+    sudo mv /usr/local /usr/local_TO_BE_DELETED
+    sudo mv /usr/local.1 /usr/local
+    run the installer again
 
 == Configuration
 
 Edit ~/.hgrc (create the file if it does not exist) and add:
 
-	[ui]
-	username = cawthron
+    [ui]
+    username = cawthron
 
 On Windows, edit c:/Mercurial/mecurial.ini.
 
 == Commands
 
-	hg clone <repository>
-	hg addremove -n
-		do not perform actions, just print output
-	hg addremove
-	hg diff
-	hg pull -u
-		pull before you commit to avoid unneeded merges
-	hg commit -m"your message"
-	hg push
+    hg clone <repository>
+    hg addremove -n
+        do not perform actions, just print output
+    hg addremove
+    hg diff
+    hg pull -u
+        pull before you commit to avoid unneeded merges
+    hg commit -m"your message"
+    hg push
 
 If hg push says that you need to merge, run these commands.
 
-	hg merge
-	hg commit -m"your merge message"
-	hg push
+    hg merge
+    hg commit -m"your merge message"
+    hg push
 
 == TortoiseHg, an alternative to Selenic Mercurial
 

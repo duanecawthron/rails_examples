@@ -2,8 +2,8 @@
 
 Resources
 
-	http://rubygems.org/
-	http://rubygems.org/pages/download
+    http://rubygems.org/
+    http://rubygems.org/pages/download
 
 == Introduction
 
@@ -15,27 +15,27 @@ Install RubyGems if you can't use RVM or if you don't want to use RVM.
 
 Follow the instructions on the download page.
 
-	download rubygems-1.8.3.zip
-	expand the zip
-	ruby setup.rb 
+    download rubygems-1.8.3.zip
+    expand the zip
+    ruby setup.rb 
 
 You will probably need to use sudo to run setup.rb.
 
-	sudo ruby setup.rb
+    sudo ruby setup.rb
 
 == Commands
 
 Install the rails gem.
 
-	sudo gem install rails
+    sudo gem install rails
 
-== 	ISSUE - bad version of rake
+==  ISSUE - bad version of rake
 
-	rake db:create
-	rake aborted!
-	undefined method `task' for #<Myapp::Application:0x1018d9530>
+    rake db:create
+    rake aborted!
+    undefined method `task' for #<Myapp::Application:0x1018d9530>
 
 SOLUTION
 
-	sudo gem uninstall rake -v 0.9
-	sudo gem install rake -v 0.8.7
+    sudo gem uninstall rake -v 0.9
+    sudo gem install rake -v 0.8.7

@@ -2,45 +2,45 @@
 
 == Resources
 
-	https://github.com/amatsuda/kaminari
-	http://railscasts.com/episodes/254-pagination-with-kaminari
+    https://github.com/amatsuda/kaminari
+    http://railscasts.com/episodes/254-pagination-with-kaminari
 
 == Introduction
 
 This example is based on a previous example. Use Kaminari instead of WillPaginate for pagination.
 
-	023_will_paginate
+    023_will_paginate
 
 == Execution
 
 Generate and run the example.
 
-	cd   028_kaminari
-	bash 001_install_gems.sh
-	bash 002_new_app.sh
-	bash 003_reset_database.sh
-	bash 004_rails_server.sh
+    cd   028_kaminari
+    bash 001_install_gems.sh
+    bash 002_new_app.sh
+    bash 003_reset_database.sh
+    bash 004_rails_server.sh
 
 Delete the database, files and gemset.
 
-	bash 999_clean.sh
+    bash 999_clean.sh
 
 == ISSUE: warning: multiple values for a block parameter 
 
 This error:
 
- 	kaminari-0.12.4/lib/kaminari/models/active_record_extension.rb:15: warning: multiple values for a block parameter (0 for 1)
-	
+    kaminari-0.12.4/lib/kaminari/models/active_record_extension.rb:15: warning: multiple values for a block parameter (0 for 1)
+    
 was called by this command in .../app/controllers/posts_controller.rb.
 
-	@count = Post.page().count();
+    @count = Post.page().count();
 
 SOLUTION
 
 The page scope in kaminari/models/active_record_extension.rb expects an arg for page number.
 
-	scope :page, Proc.new {|num| limit(default_per_page).offset(default_per_page * ([num.to_i, 1].max - 1)) }
+    scope :page, Proc.new {|num| limit(default_per_page).offset(default_per_page * ([num.to_i, 1].max - 1)) }
 
 Pass an arg to page.
 
-	@count = Post.page(nil).count();
+    @count = Post.page(nil).count();

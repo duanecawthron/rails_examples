@@ -4,43 +4,43 @@ Use RVM to manage multiple versions of ruby and multiple sets of gems.
 
 Resources
 
-	https://rvm.beginrescueend.com/
-	https://rvm.beginrescueend.com/rvm/install/
+    https://rvm.beginrescueend.com/
+    https://rvm.beginrescueend.com/rvm/install/
 
 == Installation on Mac OS X Snow Leopard v10.6.7
 
 Follow the instructions on https://rvm.beginrescueend.com/rvm/install/
 
-	bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
-	echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile
-	source .bash_profile
+    bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
+    echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile
+    source .bash_profile
 
 RVM was installed here.
 
-	~/.rvm
-	~/.rvmrc
-	~/bin/rvm
-	~/bin/rvm-auto-ruby
-	~/bin/rvm-exec
-	~/bin/rvm-installer
-	~/bin/rvm-prompt
-	~/bin/rvm-shell
-	~/bin/rvmsudo
+    ~/.rvm
+    ~/.rvmrc
+    ~/bin/rvm
+    ~/bin/rvm-auto-ruby
+    ~/bin/rvm-exec
+    ~/bin/rvm-installer
+    ~/bin/rvm-prompt
+    ~/bin/rvm-shell
+    ~/bin/rvmsudo
 
 == Commands
 
-	rvm usage
+    rvm usage
 
 Install a specific version of ruby.
 
-	rvm install 1.8.7
-	rvm --default 1.8.7
+    rvm install 1.8.7
+    rvm --default 1.8.7
 
 Use a specific version of ruby.
 
-	rvm use system
-	rvm use 1.8.7
-	ruby --version
+    rvm use system
+    rvm use 1.8.7
+    ruby --version
 
 Create gemsets in ~/.rvm/environments.
 
@@ -53,22 +53,22 @@ Use specific version of ruby and specific gemset.
 
 List gemsets.
 
-	rvm gemset list
+    rvm gemset list
 
 Use specific gemset.
 
-	rvm gemset use mygemset
+    rvm gemset use mygemset
 
 Show the current ruby version and gemset.
 
-	rvm current
+    rvm current
 
 Install the rails gem.
 
-	gem install rails
+    gem install rails
 
 Delete gemset.
 
-	rvm --force gemset delete mygemset
+    rvm --force gemset delete mygemset
 
 
