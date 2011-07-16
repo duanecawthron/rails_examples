@@ -11,7 +11,7 @@ class HomeController < ApplicationController
     end
 
     # what if new posts are added after we get total_count and before we get posts?
-    @total_count = ((@page_number - 1) * @per_page) + Post.page(@page_number).per(@per_page).count();
+    @total_count = (([@page_number, 1].max - 1) * @per_page) + Post.page(@page_number).per(@per_page).count();
     @posts = Post.order('created_at').page(@page_number).per(@per_page)
     @posts = @posts.reverse
 

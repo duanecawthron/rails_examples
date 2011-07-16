@@ -1,12 +1,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
-	$("#more_form").hide();
-	$("#more_btn").click(function(event){
-		handleMoreButton();
-		event.preventDefault();
-	});
 	gotPageFromServer(<%= @total_count %>, <%= @page_number %>);
-	checkCount();
+	start_ublog();
 });
 </script>
 

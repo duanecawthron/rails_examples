@@ -16,7 +16,9 @@ function gotPageFromServer(count, pageNumber) {
 	if (pageNumber < lowestClientPage || lowestClientPage == -1) {
 		lowestClientPage = pageNumber;
 	}
-	if (lowestClientPage == 1) {
+	if (lowestClientPage > 1) {
+		$("#loading").show();
+	} else {
 		$("#loading").hide();
 	}
 	if (lowestClientPage > 1) {
@@ -103,4 +105,13 @@ function handleMoreButton() {
 		}
 	});
 	// http://localhost:3000/home.js will call gotMoreFromServer()
+}
+
+function start_ublog() {
+	$("#more_form").hide();
+	$("#more_btn").click(function(event){
+		handleMoreButton();
+		event.preventDefault();
+	});
+	checkCount();
 }
