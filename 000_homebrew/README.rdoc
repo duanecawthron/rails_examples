@@ -38,3 +38,22 @@ Follow the instructions on the Wiki, "Installing to /usr/local for Developers".
 == Notes
 
 Files are downloaded and cached to ~/Library/Caches/Homebrew
+
+== ISSUE: Spidermonkey install fails due to MD5 mismatch
+
+SOLUTION
+
+From: https://github.com/mxcl/homebrew/issues/1644
+
+Run brew update first.
+
+== ISSUE: brew update failed
+
+SOLUTION
+
+From: https://github.com/mxcl/homebrew/issues/5128
+
+	cd /usr/local
+	git remote add origin git://github.com/mxcl/homebrew.git
+	git fetch origin
+	git reset --hard origin/master
